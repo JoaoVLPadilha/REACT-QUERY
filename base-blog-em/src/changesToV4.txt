@@ -1,0 +1,41 @@
+This course was written with React Query version 3. On July 20, 2022, React Query version 4 was released (also known as TanStack Query, though Tanner Linsley recommends still calling it React Query if you're referring to the React version of TanStack Query).
+
+
+
+I would recommend using React Query version 3 for this course.
+
+To make sure you're installing version 3, please use this syntax to install: 
+
+npm install react-query@^3
+
+
+Here are the relevant differences for this course if you decide to use React Query version 4:
+
+1. The install and imports for v4 recommend @tanstack/react-query instead of react-query
+
+2. The query keys must be arrays -- so any time the course uses a string instead of an array as a query key, you must enclose it in an array.
+
+3. You'll need install the devtools separately and import them from '@tanstack/react-query-devtools'
+
+4. setLogger (used in the testing section) has been removed. You'll need to add the logger as a QueryClient option instead.
+
+5.  onSuccess is no longer called from setQueryData. This caused a kerfuffle when they changed the behavior in the other direction (they started calling onSuccess after setQueryData when they hadn't before) after I published the course, and I ultimately updated the course to account for this change. This one is probably the most difficult to reconcile for React Query version 4, and the main reason I recommend continuing to use React Query version 3 until I officially update the course to version 4.
+
+
+
+React Query v4 Course Repo Branch
+I've created a react-query-v4 branch to the course repo to show the differences for all of the apps in v4. Feel free to use this branch as reference if you'd like to use v4 or have questions about how to achieve any of the above. Links: 
+
+summary of the changes
+
+Project code differences for:
+
+blog-em-ipsum
+
+infinite-swapi
+
+lazy-days-spa
+
+
+
+As always, I'm happy to continue the discussion in the course Q&A!
