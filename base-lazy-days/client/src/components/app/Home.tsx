@@ -3,14 +3,18 @@ import { ReactElement } from 'react';
 import { GiFlowerPot } from 'react-icons/gi';
 
 import { BackgroundImage } from '../common/BackgroundImage';
+import { usePrefetchTreatments } from 'components/treatments/hooks/useTreatments';
 
 export function Home(): ReactElement {
+  usePrefetchTreatments();
+  // useTreatments()
+
   return (
     <Stack textAlign="center" justify="center" height="84vh">
       <BackgroundImage />
       <Text textAlign="center" fontFamily="Forum, sans-serif" fontSize="6em">
         <Icon m={4} verticalAlign="top" as={GiFlowerPot} />
-        Lazy Days Spa
+        Lazy Days Spaaa
       </Text>
       <Text>Hours: limited</Text>
       <Text>Address: nearby</Text>
