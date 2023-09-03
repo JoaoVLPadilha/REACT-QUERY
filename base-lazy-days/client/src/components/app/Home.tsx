@@ -7,7 +7,6 @@ import { usePrefetchTreatments } from 'components/treatments/hooks/useTreatments
 
 export function Home(): ReactElement {
   usePrefetchTreatments();
-  // useTreatments()
 
   return (
     <Stack textAlign="center" justify="center" height="84vh">
