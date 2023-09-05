@@ -16,9 +16,12 @@ function queryErrorHandler(error: unknown): void {
 
 // to satisfy typescript until this file has uncommented contents
 export const queryClient = new QueryClient({
-    defaultOptions: {
-        queries: {
-            onError: queryErrorHandler
-        }
-    }
+  defaultOptions: {
+    queries: {
+      onError: queryErrorHandler,
+    },
+    mutations: {
+      onError: queryErrorHandler,
+    },
+  },
 });
