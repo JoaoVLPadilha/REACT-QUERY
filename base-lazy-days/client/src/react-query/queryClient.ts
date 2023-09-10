@@ -14,8 +14,16 @@ function queryErrorHandler(error: unknown): void {
   toast({ title, status: 'error', variant: 'subtle', isClosable: true });
 }
 
+
+
+const logvar = {
+  log: console.log,
+  warn: console.log,
+  error: () => {}
+}
 // to satisfy typescript until this file has uncommented contents
-export const queryClient = new QueryClient({
+export function generateQueryClient(consologConfig:boolean): QueryClient {
+  return new QueryClient({
   defaultOptions: {
     queries: {
       onError: queryErrorHandler,
@@ -24,4 +32,9 @@ export const queryClient = new QueryClient({
       onError: queryErrorHandler,
     },
   },
+  logger: consologConfig ? logvar : null
+
 });
+}
+
+export const queryClient = generateQueryClient(false)
